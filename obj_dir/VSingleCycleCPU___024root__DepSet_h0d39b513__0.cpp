@@ -16,22 +16,18 @@ void VSingleCycleCPU___024root___eval_triggers__act(VSingleCycleCPU___024root* v
     VSingleCycleCPU__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VSingleCycleCPU___024root___eval_triggers__act\n"); );
     // Body
-    vlSelf->__VactTriggered.at(0U) = (vlSelf->SingleCycleCPU__DOT__writeBackData 
-                                      != vlSelf->__Vtrigrprev__TOP__SingleCycleCPU__DOT__writeBackData);
-    vlSelf->__VactTriggered.at(1U) = (((IData)(vlSelf->clk) 
+    vlSelf->__VactTriggered.at(0U) = (((IData)(vlSelf->clk) 
                                        & (~ (IData)(vlSelf->__Vtrigrprev__TOP__clk))) 
                                       | ((~ (IData)(vlSelf->start)) 
                                          & (IData)(vlSelf->__Vtrigrprev__TOP__start)));
-    vlSelf->__VactTriggered.at(2U) = (((~ (IData)(vlSelf->clk)) 
+    vlSelf->__VactTriggered.at(1U) = (((~ (IData)(vlSelf->clk)) 
                                        & (IData)(vlSelf->__Vtrigrprev__TOP__clk)) 
                                       | ((~ (IData)(vlSelf->start)) 
                                          & (IData)(vlSelf->__Vtrigrprev__TOP__start)));
-    vlSelf->__VactTriggered.at(3U) = ((vlSelf->SingleCycleCPU__DOT__ALUOut 
+    vlSelf->__VactTriggered.at(2U) = ((vlSelf->SingleCycleCPU__DOT__ALUOut 
                                        != vlSelf->__Vtrigrprev__TOP__SingleCycleCPU__DOT__ALUOut) 
                                       | ((IData)(vlSelf->SingleCycleCPU__DOT__memRead) 
                                          != (IData)(vlSelf->__Vtrigrprev__TOP__SingleCycleCPU__DOT__memRead)));
-    vlSelf->__Vtrigrprev__TOP__SingleCycleCPU__DOT__writeBackData 
-        = vlSelf->SingleCycleCPU__DOT__writeBackData;
     vlSelf->__Vtrigrprev__TOP__clk = vlSelf->clk;
     vlSelf->__Vtrigrprev__TOP__start = vlSelf->start;
     vlSelf->__Vtrigrprev__TOP__SingleCycleCPU__DOT__ALUOut 
@@ -40,8 +36,7 @@ void VSingleCycleCPU___024root___eval_triggers__act(VSingleCycleCPU___024root* v
         = vlSelf->SingleCycleCPU__DOT__memRead;
     if (VL_UNLIKELY((1U & (~ (IData)(vlSelf->__VactDidInit))))) {
         vlSelf->__VactDidInit = 1U;
-        vlSelf->__VactTriggered.at(0U) = 1U;
-        vlSelf->__VactTriggered.at(3U) = 1U;
+        vlSelf->__VactTriggered.at(2U) = 1U;
     }
 #ifdef VL_DEBUG
     if (VL_UNLIKELY(vlSymsp->_vm_contextp__->debug())) {

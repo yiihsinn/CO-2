@@ -4,137 +4,144 @@ module SingleCycleCPU (
     output signed [31:0] r [0:31]
 );
 
-wire [31:0] current_PC, next_PC, PC_plus_4, instruction, readData1, readData2, imm, imm_shifted, branch_target, ALU_B, ALUOut, memData, writeBackData;
-wire [3:0] ALUCtl;
-wire [1:0] memtoReg, ALUOp, PCSel;
-wire memRead, memWrite, ALUSrc, regWrite, BrEq, BrLT, zero_flag;
-wire [31:0] srcA, srcB;
+// When input start is zero, cpu should reset
+// When input start is high, cpu start running
+
+// The rst signal is active low, which means the module will reset if the rst signal is zero.
+// And you should follow this design.
+
+// TODO: connect wire to realize SingleCycleCPU
+// The following provides simple template,
+// you can modify it as you wish except I/O pin and register module
 
 
 PC m_PC(
-    .clk(clk),
-    .rst(start),
-    .pc_i(next_PC),
-    .pc_o(current_PC)
+    .clk(),
+    .rst(),
+    .pc_i(),
+    .pc_o()
 );
 
 Adder m_Adder_1(
-    .a(current_PC),
-    .b(32'd4),
-    .sum(PC_plus_4)
+    .a(),
+    .b(),
+    .sum()
 );
 
+
 InstructionMemory m_InstMem(
-    .readAddr(current_PC),
-    .inst(instruction)
+    .readAddr(),
+    .inst()
 );
 
 Control m_Control(
-    .opcode(instruction[6:0]),
-    .funct3(instruction[14:12]),
-    .BrEq(BrEq),
-    .BrLT(BrLT),
-    .memRead(memRead),
-    .memtoReg(memtoReg),
-    .ALUOp(ALUOp),
-    .memWrite(memWrite),
-    .ALUSrc(ALUSrc),
-    .regWrite(regWrite),
-    .PCSel(PCSel)
+    .opcode(),
+    .funct3(),
+    .BrEq(),
+    .BrLT(),
+    .memRead(),
+    .memtoReg(),
+    .ALUOp(),
+    .memWrite(),
+    .ALUSrc(),
+    .regWrite(),
+    .PCSel()
 );
+
+// For Student:
+// Do not change the Register instance name!
+// Or you will fail validation.
 
 Register m_Register(
-    .clk(clk),
-    .rst(start),
-    .regWrite(regWrite),
-    .readReg1(instruction[19:15]),
-    .readReg2(instruction[24:20]),
-    .writeReg(instruction[11:7]),
-    .writeData(writeBackData),
-    .readData1(readData1),
-    .readData2(readData2)
+    .clk(),
+    .rst(),
+    .regWrite(),
+    .readReg1(),
+    .readReg2(),
+    .writeReg(),
+    .writeData(),
+    .readData1(),
+    .readData2()
 );
 
+// ======= for validation =======
+// == Dont change this section ==
 assign r = m_Register.regs;
+// ======= for vaildation =======
 
 BranchComp m_BranchComp(
-    .A(srcA),       // ← 改這裡
-    .B(srcB),
-    .BrEq(BrEq),
-    .BrLT(BrLT)
+    .A(),
+    .B(),
+    .BrEq(),
+    .BrLT()
 );
 
 ImmGen m_ImmGen(
-    .inst(instruction),
-    .imm(imm)
+    .inst(),
+    .imm()
 );
 
+
 ShiftLeftOne m_ShiftLeftOne(
-    .i(imm),
-    .o(imm_shifted)
+    .i(),
+    .o()
 );
 
 Adder m_Adder_2(
-    .a(current_PC),
-    .b(imm_shifted),
-    .sum(branch_target)
+    .a(),
+    .b(),
+    .sum()
 );
-assign srcA = (regWrite && (instruction[19:15] == instruction[11:7]) &&
-               (instruction[11:7] != 5'd0)) ? writeBackData : readData1;
-
-assign srcB = (regWrite && (instruction[24:20] == instruction[11:7]) &&
-               (instruction[11:7] != 5'd0)) ? writeBackData : readData2;
-
-wire [31:0] jalr_target;
-assign jalr_target = ALUOut & 32'hFFFFFFFE;
 
 Mux3to1 #(.size(32)) m_Mux_PC(
-    .sel(PCSel), 
-    .s0(PC_plus_4),
-    .s1(branch_target),
-    .s2(ALUOut),
-    .out(next_PC)
+    .sel(),
+    .s0(),
+    .s1(),
+    .s2(),
+    .out()
 );
 
+
 Mux2to1 #(.size(32)) m_Mux_ALU(
-    .sel(ALUSrc),
-    .s0(srcB),
-    .s1(imm),
-    .out(ALU_B)
+    .sel(),
+    .s0(),
+    .s1(),
+    .out()
 );
 
 ALUCtrl m_ALUCtrl(
-    .ALUOp(ALUOp),
-    .funct7(instruction[30]),
-    .funct3(instruction[14:12]),
-    .ALUCtl(ALUCtl)
+    .ALUOp(),
+    .funct7(),
+    .funct3(),
+    .ALUCtl()
 );
 
 ALU m_ALU(
-    .ALUctl(ALUCtl),
-    .A(srcA),       // ← 改這裡
-    .B(ALU_B),
-    .ALUOut(ALUOut),
-    .zero(zero_flag)
+    .ALUctl(),
+    .A(),
+    .B(),
+    .ALUOut(),
+    .zero()
 );
+
 
 DataMemory m_DataMemory(
-    .rst(start),
-    .clk(~clk),
-    .memWrite(memWrite),
-    .memRead(memRead),
-    .address(ALUOut),
-    .writeData(readData2),
-    .readData(memData)
+    .rst(),
+    .clk(),
+    .memWrite(),
+    .memRead(),
+    .address(),
+    .writeData(),
+    .readData()
 );
 
+
 Mux3to1 #(.size(32)) m_Mux_WriteData(
-    .sel(memtoReg),
-    .s0(ALUOut),
-    .s1(memData),
-    .s2(PC_plus_4),
-    .out(writeBackData)
+    .sel(),
+    .s0(),
+    .s1(),
+    .s2(),
+    .out()
 );
 
 endmodule
-
