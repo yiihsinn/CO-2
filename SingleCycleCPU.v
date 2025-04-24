@@ -8,6 +8,8 @@ wire [31:0] current_PC, next_PC, PC_plus_4, instruction, readData1, readData2, i
 wire [3:0] ALUCtl;
 wire [1:0] memtoReg, ALUOp, PCSel;
 wire memRead, memWrite, ALUSrc, regWrite, BrEq, BrLT, zero_flag;
+wire [31:0] srcA, srcB;
+
 
 PC m_PC(
     .clk(clk),
@@ -56,8 +58,8 @@ Register m_Register(
 assign r = m_Register.regs;
 
 BranchComp m_BranchComp(
-    .A(readData1),
-    .B(readData2),
+    .A(srcA),       // ← 改這裡
+    .B(srcB),
     .BrEq(BrEq),
     .BrLT(BrLT)
 );
@@ -77,6 +79,11 @@ Adder m_Adder_2(
     .b(imm_shifted),
     .sum(branch_target)
 );
+assign srcA = (regWrite && (instruction[19:15] == instruction[11:7]) &&
+               (instruction[11:7] != 5'd0)) ? writeBackData : readData1;
+
+assign srcB = (regWrite && (instruction[24:20] == instruction[11:7]) &&
+               (instruction[11:7] != 5'd0)) ? writeBackData : readData2;
 
 wire [31:0] jalr_target;
 assign jalr_target = ALUOut & 32'hFFFFFFFE;
@@ -91,7 +98,7 @@ Mux3to1 #(.size(32)) m_Mux_PC(
 
 Mux2to1 #(.size(32)) m_Mux_ALU(
     .sel(ALUSrc),
-    .s0(readData2),
+    .s0(srcB),
     .s1(imm),
     .out(ALU_B)
 );
@@ -105,7 +112,7 @@ ALUCtrl m_ALUCtrl(
 
 ALU m_ALU(
     .ALUctl(ALUCtl),
-    .A(readData1),
+    .A(srcA),       // ← 改這裡
     .B(ALU_B),
     .ALUOut(ALUOut),
     .zero(zero_flag)
@@ -113,7 +120,7 @@ ALU m_ALU(
 
 DataMemory m_DataMemory(
     .rst(start),
-    .clk(clk),
+    .clk(~clk),
     .memWrite(memWrite),
     .memRead(memRead),
     .address(ALUOut),
