@@ -14,7 +14,7 @@ module ImmGen (
             7'b1100011: // branch
                 imm = {{20{inst[31]}}, inst[31], inst[7], inst[30:25], inst[11:8]};
             7'b1101111: // jal
-                imm = {{12{inst[31]}}, inst[31], inst[19:12], inst[11], inst[30:21]};
+                imm = {{12{inst[31]}}, inst[31], inst[19:12], inst[12], inst[30:21]};
             default:
                 imm = 32'b0;
         endcase

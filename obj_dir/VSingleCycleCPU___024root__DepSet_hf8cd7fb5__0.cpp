@@ -19,10 +19,10 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
     VSingleCycleCPU__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    VSingleCycleCPU___024root___nba_sequent__TOP__0\n"); );
     // Init
-    CData/*7:0*/ __VdfgTmp_ha38e9885__0;
-    __VdfgTmp_ha38e9885__0 = 0;
     CData/*7:0*/ __VdfgTmp_ha387426a__0;
     __VdfgTmp_ha387426a__0 = 0;
+    CData/*7:0*/ __VdfgTmp_ha38e9885__0;
+    __VdfgTmp_ha38e9885__0 = 0;
     CData/*5:0*/ __Vtableidx1;
     __Vtableidx1 = 0;
     // Body
@@ -66,53 +66,53 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                        << 8U) | (IData)(__VdfgTmp_ha38e9885__0));
     if ((0x80U <= vlSelf->SingleCycleCPU__DOT__current_PC)) {
         vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__funct3 = 0U;
-        vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode = 0U;
+        vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode = 0U;
     } else {
         vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__funct3 
             = (7U & ((IData)(__VdfgTmp_ha387426a__0) 
                      >> 4U));
-        vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode 
+        vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode 
             = (0x7fU & (IData)(__VdfgTmp_ha38e9885__0));
     }
     vlSelf->SingleCycleCPU__DOT__memWrite = (IData)(
                                                     (0x23U 
-                                                     == (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)));
+                                                     == (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)));
     vlSelf->__VdfgTmp_hbd8ba7e4__0 = ((vlSelf->SingleCycleCPU__DOT__m_InstMem__DOT__insts
                                        [(0x7fU & ((IData)(1U) 
                                                   + vlSelf->SingleCycleCPU__DOT__current_PC))] 
                                        << 0x10U) | (IData)(vlSelf->__VdfgTmp_h2f1da13b__0));
-    if ((0x40U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))) {
+    if ((0x40U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))) {
         vlSelf->SingleCycleCPU__DOT__memtoReg = ((0x20U 
-                                                  & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                  & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                   ? 
                                                  ((0x10U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 0U
                                                    : 
                                                   ((8U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((4U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     ((2U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? 
                                                      ((1U 
-                                                       & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                       & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                        ? 2U
                                                        : 0U)
                                                       : 0U)
                                                      : 0U)
                                                     : 
                                                    ((4U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     ((2U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? 
                                                      ((1U 
-                                                       & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                       & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                        ? 2U
                                                        : 0U)
                                                       : 0U)
@@ -122,69 +122,69 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                             (0x27U 
                                                              == 
                                                              (0x3fU 
-                                                              & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)))));
+                                                              & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)))));
         vlSelf->SingleCycleCPU__DOT__ALUOp = 0U;
-    } else if ((0x20U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))) {
+    } else if ((0x20U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))) {
         vlSelf->SingleCycleCPU__DOT__memtoReg = 0U;
         vlSelf->SingleCycleCPU__DOT__ALUSrc = (1U & (IData)(
                                                             (3U 
                                                              == 
                                                              (0x1fU 
-                                                              & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)))));
+                                                              & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)))));
         vlSelf->SingleCycleCPU__DOT__ALUOp = ((0x10U 
-                                               & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                               & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                ? ((8U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 0U
                                                    : 
                                                   ((4U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 0U
                                                     : 
                                                    ((2U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     ((1U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? 2U
                                                       : 0U)
                                                      : 0U)))
                                                : 0U);
-    } else if ((0x10U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))) {
+    } else if ((0x10U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))) {
         vlSelf->SingleCycleCPU__DOT__memtoReg = 0U;
         vlSelf->SingleCycleCPU__DOT__ALUSrc = (1U & (IData)(
                                                             (3U 
                                                              == 
                                                              (0xfU 
-                                                              & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)))));
-        vlSelf->SingleCycleCPU__DOT__ALUOp = ((8U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                              & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)))));
+        vlSelf->SingleCycleCPU__DOT__ALUOp = ((8U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                ? 0U
                                                : ((4U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 0U
                                                    : 
                                                   ((2U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((1U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 3U
                                                      : 0U)
                                                     : 0U)));
     } else {
         vlSelf->SingleCycleCPU__DOT__memtoReg = ((8U 
-                                                  & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                  & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                   ? 0U
                                                   : 
                                                  ((4U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 0U
                                                    : 
                                                   ((2U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((1U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 1U
                                                      : 0U)
                                                     : 0U)));
@@ -192,7 +192,7 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                             (3U 
                                                              == 
                                                              (0xfU 
-                                                              & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)))));
+                                                              & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)))));
         vlSelf->SingleCycleCPU__DOT__ALUOp = 0U;
     }
     __Vtableidx1 = ((0x7fffffe0U & (((0x80U > vlSelf->SingleCycleCPU__DOT__current_PC) 
@@ -208,24 +208,24 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                  <= vlSelf->SingleCycleCPU__DOT__current_PC)
                                                  ? 0U
                                                  : vlSelf->__VdfgTmp_hd847faa4__0);
-    vlSelf->SingleCycleCPU__DOT__imm = ((0x40U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+    vlSelf->SingleCycleCPU__DOT__imm = ((0x40U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                          ? ((0x20U 
-                                             & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                             & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                              ? ((0x10U 
-                                                 & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                 & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                  ? 0U
                                                  : 
                                                 ((8U 
-                                                  & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                  & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                   ? 
                                                  ((4U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 
                                                   ((2U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((1U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     (((- (IData)(
                                                                  (vlSelf->SingleCycleCPU__DOT__instruction 
@@ -239,7 +239,7 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                                >> 1U)) 
                                                            | ((0x400U 
                                                                & (vlSelf->SingleCycleCPU__DOT__instruction 
-                                                                  >> 1U)) 
+                                                                  >> 2U)) 
                                                               | (0x3ffU 
                                                                  & (vlSelf->SingleCycleCPU__DOT__instruction 
                                                                     >> 0x15U))))))
@@ -248,13 +248,13 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                    : 0U)
                                                   : 
                                                  ((4U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 
                                                   ((2U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((1U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     (((- (IData)(
                                                                  (vlSelf->SingleCycleCPU__DOT__instruction 
@@ -266,10 +266,10 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                     : 0U)
                                                    : 
                                                   ((2U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((1U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     (((- (IData)(
                                                                  (vlSelf->SingleCycleCPU__DOT__instruction 
@@ -290,21 +290,21 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                      : 0U)
                                                     : 0U))))
                                              : 0U) : 
-                                        ((0x20U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                        ((0x20U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                           ? ((0x10U 
-                                              & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                              & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                               ? 0U : 
-                                             ((8U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                             ((8U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                ? 0U
                                                : ((4U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 0U
                                                    : 
                                                   ((2U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((1U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     (((- (IData)(
                                                                  (vlSelf->SingleCycleCPU__DOT__instruction 
@@ -318,15 +318,15 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__0(VSingleCycleC
                                                               >> 7U))))
                                                      : 0U)
                                                     : 0U))))
-                                          : ((8U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                          : ((8U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                               ? 0U : 
-                                             ((4U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                             ((4U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                ? 0U
                                                : ((2U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 
                                                   ((1U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    (((- (IData)(
                                                                 (vlSelf->SingleCycleCPU__DOT__instruction 
@@ -357,11 +357,11 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__1(VSingleCycleC
     if (vlSelf->start) {
         if (vlSelf->SingleCycleCPU__DOT__regWrite) {
             __Vdlyvval__SingleCycleCPU__DOT__m_Register__DOT__regs__v0 
-                = ((0U == (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Register__writeReg))
+                = ((0U == (IData)(vlSelf->SingleCycleCPU__DOT__rd))
                     ? 0U : vlSelf->SingleCycleCPU__DOT__writeBackData);
             __Vdlyvset__SingleCycleCPU__DOT__m_Register__DOT__regs__v0 = 1U;
             __Vdlyvdim0__SingleCycleCPU__DOT__m_Register__DOT__regs__v0 
-                = vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Register__writeReg;
+                = vlSelf->SingleCycleCPU__DOT__rd;
         }
     } else {
         __Vdlyvset__SingleCycleCPU__DOT__m_Register__DOT__regs__v1 = 1U;
@@ -517,52 +517,52 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_sequent__TOP__3(VSingleCycleC
     // Body
     vlSelf->SingleCycleCPU__DOT__regWrite = (1U & (
                                                    (0x40U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? (IData)(
                                                               ((0x20U 
                                                                 == 
                                                                 (0x30U 
-                                                                 & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))) 
+                                                                 & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))) 
                                                                & ((8U 
-                                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                                    ? (IData)(
                                                                              (7U 
                                                                               == 
                                                                               (7U 
-                                                                               & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))))
+                                                                               & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))))
                                                                    : (IData)(
                                                                              (7U 
                                                                               == 
                                                                               (7U 
-                                                                               & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)))))))
+                                                                               & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)))))))
                                                     : 
                                                    ((0x20U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? (IData)(
                                                                (0x13U 
                                                                 == 
                                                                 (0x1fU 
-                                                                 & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))))
+                                                                 & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))))
                                                      : 
                                                     ((0x10U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? (IData)(
                                                                 (3U 
                                                                  == 
                                                                  (0xfU 
-                                                                  & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))))
+                                                                  & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))))
                                                       : (IData)(
                                                                 (3U 
                                                                  == 
                                                                  (0xfU 
-                                                                  & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))))))));
-    vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Register__writeReg 
-        = ((0x80U <= vlSelf->SingleCycleCPU__DOT__current_PC)
-            ? 0U : (0x1fU & ((IData)(vlSelf->__VdfgTmp_h2f1da13b__0) 
-                             >> 7U)));
+                                                                  & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))))))));
+    vlSelf->SingleCycleCPU__DOT__rd = ((0x80U <= vlSelf->SingleCycleCPU__DOT__current_PC)
+                                        ? 0U : (0x1fU 
+                                                & ((IData)(vlSelf->__VdfgTmp_h2f1da13b__0) 
+                                                   >> 7U)));
     vlSelf->SingleCycleCPU__DOT__memRead = (IData)(
                                                    (3U 
-                                                    == (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode)));
+                                                    == (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode)));
     if (vlSelf->__Vdlyvset__SingleCycleCPU__DOT__m_DataMemory__DOT__data_memory__v0) {
         vlSelf->SingleCycleCPU__DOT__m_DataMemory__DOT__data_memory[vlSelf->__Vdlyvdim0__SingleCycleCPU__DOT__m_DataMemory__DOT__data_memory__v0] 
             = vlSelf->__Vdlyvval__SingleCycleCPU__DOT__m_DataMemory__DOT__data_memory__v0;
@@ -601,46 +601,46 @@ VL_INLINE_OPT void VSingleCycleCPU___024root___nba_comb__TOP__0(VSingleCycleCPU_
     vlSelf->SingleCycleCPU__DOT__ALU_B = ((IData)(vlSelf->SingleCycleCPU__DOT__ALUSrc)
                                            ? vlSelf->SingleCycleCPU__DOT__imm
                                            : vlSelf->SingleCycleCPU__DOT__readData2);
-    vlSelf->SingleCycleCPU__DOT__PCSel = ((0x40U & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+    vlSelf->SingleCycleCPU__DOT__PCSel = ((0x40U & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                            ? ((0x20U 
-                                               & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                               & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                ? ((0x10U 
-                                                   & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                   & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                    ? 0U
                                                    : 
                                                   ((8U 
-                                                    & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                    & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                     ? 
                                                    ((4U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     ((2U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? 
                                                      ((1U 
-                                                       & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                       & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                        ? 1U
                                                        : 0U)
                                                       : 0U)
                                                      : 0U)
                                                     : 
                                                    ((4U 
-                                                     & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                     & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                      ? 
                                                     ((2U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? 
                                                      ((1U 
-                                                       & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                       & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                        ? 2U
                                                        : 0U)
                                                       : 0U)
                                                      : 
                                                     ((2U 
-                                                      & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                      & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                       ? 
                                                      ((1U 
-                                                       & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__opcode))
+                                                       & (IData)(vlSelf->SingleCycleCPU__DOT__m_ImmGen__DOT__opcode))
                                                        ? 
                                                       ((4U 
                                                         & (IData)(vlSelf->SingleCycleCPU__DOT____Vcellinp__m_Control__funct3))
